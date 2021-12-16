@@ -9,8 +9,10 @@ license=('Apache')
 depends=('zlib' 'libgl' 'qt5-base' 'qt5-x11extras' 'qt5-svg' 'xorg-xrandr' 'zenity' 'wget')
 conflicts=('multimc' 'multimc5' 'multimc5-git')
 provides=('multimc' 'multimc5' 'multimc5-git')
-source=("$pkgname-$pkgver.deb::https://files.multimc.org/downloads/multimc_$pkgver-$pkgrel.deb")
-sha1sums=('b943427e5f32f6a41d77a373029731c67571901d')
+source=("$pkgname-$pkgver.deb::https://files.multimc.org/downloads/multimc_$pkgver-$pkgrel.deb"
+        "https://raw.githubusercontent.com/MultiMC/Launcher/develop/launcher/package/ubuntu/multimc/usr/share/man/man1/multimc.1")
+sha1sums=('b943427e5f32f6a41d77a373029731c67571901d'
+          'b4f1dfc021fbf6be22b066734364a1f87ed37214')
 noextract=("$pkgname-$pkgver.deb")
 
 prepare() {
@@ -23,6 +25,7 @@ package() {
 	mkdir -p "$pkgdir/usr/share/metainfo"
 	mkdir -p "$pkgdir/usr/share/applications"
 	mkdir -p "$pkgdir/usr/bin"
+	mkdir -p "$pkgdir/usr/share/man/man1"
 
 	cp -R "$srcdir/$pkgname-$pkgver/opt/multimc/" -T "$pkgdir/opt/multimc/"
 	cp -R "$srcdir/$pkgname-$pkgver/usr/share/metainfo/" -T "$pkgdir/usr/share/metainfo/"
@@ -32,5 +35,6 @@ package() {
 	install -m644 -D "$srcdir/$pkgname-$pkgver/usr/share/metainfo/multimc.metainfo.xml" "$pkgdir/usr/share/metainfo/multimc.metainfo.xml"
 	install -m644 -D "$srcdir/$pkgname-$pkgver/opt/multimc/icon.svg" "$pkgdir/opt/multimc/icon.svg"
 	install -m755 -D "$srcdir/$pkgname-$pkgver/opt/multimc/run.sh" "$pkgdir/opt/multimc/run.sh"
+	install -m755 -D "$srcdir/multimc.1" "$pkgdir/usr/share/man/man1/multimc.1"
 	ln -s "/opt/multimc/run.sh" "$pkgdir/usr/bin/multimc"
 }

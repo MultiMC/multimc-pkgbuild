@@ -22,6 +22,8 @@ pkgbase = multimc-bin
 	conflicts = multimc5-git
 	noextract = multimc-bin-1.6.deb
 	source = multimc-bin-1.6.deb::https://files.multimc.org/downloads/multimc_1.6-1.deb
+	source = https://raw.githubusercontent.com/MultiMC/Launcher/develop/launcher/package/ubuntu/multimc/usr/share/man/man1/multimc.1
 	sha1sums = b943427e5f32f6a41d77a373029731c67571901d
+	sha1sums = b4f1dfc021fbf6be22b066734364a1f87ed37214
 
 pkgname = multimc-bin

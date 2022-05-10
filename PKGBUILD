@@ -9,7 +9,7 @@ license=('Apache')
 depends=('zlib' 'opengl-driver' 'qt5-base' 'qt5-x11extras' 'qt5-svg' 'xorg-xrandr' 'zenity' 'wget')
 conflicts=('multimc' 'multimc5' 'multimc5-git')
 provides=('multimc' 'multimc5' 'multimc5-git')
-source=("$pkgname-$pkgver.deb::https://files.multimc.org/downloads/multimc_$pkgver-$pkgrel.deb"
+source=("$pkgname-$pkgver.deb::https://files.multimc.org/downloads/multimc_$pkgver-1.deb"
         "https://raw.githubusercontent.com/MultiMC/Launcher/f45f83173662ea8d28a6d69a5312679df76d762b/launcher/package/ubuntu/multimc/usr/share/man/man1/multimc.1")
 sha1sums=('b943427e5f32f6a41d77a373029731c67571901d'
           'b4f1dfc021fbf6be22b066734364a1f87ed37214')

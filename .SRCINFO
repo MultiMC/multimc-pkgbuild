@@ -23,7 +23,9 @@ pkgbase = multimc-bin
 	noextract = multimc-bin-1.6.deb
 	source = multimc-bin-1.6.deb::https://files.multimc.org/downloads/multimc_1.6-1.deb
 	source = https://raw.githubusercontent.com/MultiMC/Launcher/f45f83173662ea8d28a6d69a5312679df76d762b/launcher/package/ubuntu/multimc/usr/share/man/man1/multimc.1
+	source = desktop-icon.patch
 	sha1sums = b943427e5f32f6a41d77a373029731c67571901d
 	sha1sums = b4f1dfc021fbf6be22b066734364a1f87ed37214
+	sha1sums = 3553ee496ae3327bc6878b455226f7df973ccf37
 
 pkgname = multimc-bin

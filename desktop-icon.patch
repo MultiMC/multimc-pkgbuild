@@ -1,0 +1,13 @@
+diff --git a/usr/share/applications/multimc.desktop b/usr/share/applications/multimc.desktop
+index e0456f8..93ada57 100755
+--- a/usr/share/applications/multimc.desktop
++++ b/usr/share/applications/multimc.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Categories=Game;
+ Exec=/opt/multimc/run.sh
+-Icon=/opt/multimc/icon.svg
++Icon=multimc
+ Keywords=game;Minecraft;
+ MimeType=
+ Name=MultiMC 5

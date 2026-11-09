@@ -1,18 +1,16 @@
 # Maintainer:  Petr Mrázek <peterix@gmail.com>
 pkgname=multimc-bin
-pkgver=1.6
-pkgrel=3
+pkgver=1.7
+pkgrel=1
 pkgdesc="Free, open source launcher and instance manager for Minecraft."
 arch=('i686' 'x86_64')
 url="http://multimc.org/"
 license=('Apache')
-depends=('zlib' 'opengl-driver' 'qt5-base' 'qt5-x11extras' 'qt5-svg' 'xorg-xrandr' 'zenity' 'wget')
+depends=('zlib' 'opengl-driver' 'qt5-base' 'qt5-svg' 'xorg-xrandr' 'zenity' 'wget')
 conflicts=('multimc' 'multimc5' 'multimc5-git')
 provides=('multimc' 'multimc5' 'multimc5-git')
-source=("$pkgname-$pkgver.deb::https://files.multimc.org/downloads/multimc_$pkgver-1.deb"
-        "https://raw.githubusercontent.com/MultiMC/Launcher/f45f83173662ea8d28a6d69a5312679df76d762b/launcher/package/ubuntu/multimc/usr/share/man/man1/multimc.1")
-sha1sums=('b943427e5f32f6a41d77a373029731c67571901d'
-          'b4f1dfc021fbf6be22b066734364a1f87ed37214')
+source=("$pkgname-$pkgver.deb::https://files.multimc.org/downloads/multimc_$pkgver-1.deb")
+sha256sums=('39af6c0290782369ffa04b832adbf37567a3980a21b57b9bcfd584b2e05bf4e3')
 noextract=("$pkgname-$pkgver.deb")
 
 prepare() {
@@ -37,6 +35,6 @@ package() {
     install -m644 -D "$srcdir/$pkgname-$pkgver/usr/share/metainfo/multimc.metainfo.xml" "$pkgdir/usr/share/metainfo/multimc.metainfo.xml"
     install -m644 -D "$srcdir/$pkgname-$pkgver/opt/multimc/icon.svg" "$pkgdir/opt/multimc/icon.svg"
     install -m755 -D "$srcdir/$pkgname-$pkgver/opt/multimc/run.sh" "$pkgdir/opt/multimc/run.sh"
-    install -m755 -D "$srcdir/multimc.1" "$pkgdir/usr/share/man/man1/multimc.1"
+    install -m644 -D "$srcdir/$pkgname-$pkgver/usr/share/man/man1/multimc.1" "$pkgdir/usr/share/man/man1/multimc.1"
     ln -s "/opt/multimc/run.sh" "$pkgdir/usr/bin/multimc"
 }
